@@ -1,0 +1,8 @@
+.error{
+	border-bottom:1px solid red!important;
+}
+.text-error{
+	color:red;
+	display:none;
+	font-weight: bold;
+}

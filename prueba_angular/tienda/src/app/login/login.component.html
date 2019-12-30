@@ -1,0 +1,17 @@
+<div class="container">
+	<h3 class="center">Inicia sesión</h3>
+	<div class="col s12 m12 l12">
+		<form [formGroup]='formLogin' (ngSubmit)='login()'>
+			<input type="text" name="usuario" placeholder="Ingrese usuario" formControlName='usuario'>
+			<label class="campo-incompleto" *ngIf="!formLogin.controls['usuario'].valid">Campo obligatorio</label>
+			<input type="password" name="pass" placeholder="Ingrese contraseña" formControlName='pass'>
+			<label class="campo-incompleto" *ngIf="!formLogin.controls['pass'].valid">Campo obligatorio</label>
+			<div class="center">
+				<button class="btn waves-effect waves-light" [disabled]='!formLogin.valid' type="submit" name="action">Ingresar
+    					<i class="material-icons right">send</i>
+  				</button>
+			</div>
+			<h4 class="center red lighten-1" *ngIf="!usuarioExiste && formEnviado">No existe el usuario</h4>
+		</form>
+	</div>
+</div>
